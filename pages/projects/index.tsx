@@ -2,14 +2,15 @@ import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import NextLink from "next/link";
 
-import { gql } from "@apollo/client";
-import client from "apolloClient";
+import client from "graphql/apolloClient";
+import { GET_PROJECTS } from "graphql/projects/queries";
+import { ProjectOverview } from "graphql/projects/types";
 
-interface ProjectsProps {
-  projects: any;
+interface ProjectsPageProps {
+  projects: ProjectOverview[];
 }
 
-const Projects: NextPage<ProjectsProps> = ({ projects }) => {
+const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects }) => {
   return (
     <>
       <Head>
@@ -39,28 +40,14 @@ const Projects: NextPage<ProjectsProps> = ({ projects }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
-    query: gql`
-      query Projects {
-        projects(orderBy: rating_DESC) {
-          slug
-          title
-          excerpt
-          technicalStack
-          coverImage {
-            url
-          }
-        }
-      }
-    `,
+    query: GET_PROJECTS,
   });
-
-  const { projects } = data;
 
   return {
     props: {
-      projects,
+      projects: data.projects,
     },
   };
 };
 
-export default Projects;
+export default ProjectsPage;

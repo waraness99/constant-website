@@ -1,32 +1,33 @@
 import { NextPage, GetStaticPaths, GetStaticProps } from "next";
-import { ParsedUrlQuery } from "querystring";
 import Head from "next/head";
 
-import { gql } from "@apollo/client";
-import client from "apolloClient";
+import client from "graphql/apolloClient";
+import { GET_PROJECTS_SLUGS, GET_PROJECT_BY_SLUG } from "graphql/projects/queries";
+import { ProjectDetails } from "graphql/projects/types";
+import { ParsedUrlQuery } from "querystring";
 
-interface OneProjectProps {
-  project: any;
+interface ProjectPageProps {
+  project: ProjectDetails;
 }
 
-export const OneProject: NextPage<OneProjectProps> = ({ project }) => {
-  const { title, date, content } = project;
+interface IParams extends ParsedUrlQuery {
+  slug: string;
+}
+
+export const ProjectPage: NextPage<ProjectPageProps> = ({ project }) => {
+  const { title, date, content, excerpt } = project;
 
   return (
     <>
       <Head>
-        <title>{title} | Constant Druon</title>
-        <meta
-          name="description"
-          content="Hi, I'm Constant Druon and I'm a Software Engineer Student! Look at my cool projects!"
-        />
+        <title>{`${title} | Constant Druon`}</title>
+        <meta name="description" content={excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         <h1>{title}</h1>
         <p>{date}</p>
-
         <div dangerouslySetInnerHTML={{ __html: content.html }} />
       </main>
     </>
@@ -35,17 +36,10 @@ export const OneProject: NextPage<OneProjectProps> = ({ project }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await client.query({
-    query: gql`
-      query Projects {
-        projects {
-          slug
-        }
-      }
-    `,
+    query: GET_PROJECTS_SLUGS,
   });
 
-  const { projects } = data;
-  const paths = projects.map((project: any) => ({
+  const paths = data.projects.map((project: { slug: string }) => ({
     params: { slug: project.slug },
   }));
 
@@ -55,38 +49,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-interface IParams extends ParsedUrlQuery {
-  slug: string;
-}
-
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as IParams;
 
   const { data } = await client.query({
-    query: gql`
-      query ProjectBySlug($slug: String!) {
-        projects(where: { slug: $slug }) {
-          title
-          date
-          content {
-            html
-          }
-          technicalStack
-          projectType
-        }
-      }
-    `,
+    query: GET_PROJECT_BY_SLUG,
     variables: { slug },
   });
 
-  const { projects } = data;
-  const project = projects[0];
-
   return {
     props: {
-      project,
+      project: data.projects[0],
     },
   };
 };
 
-export default OneProject;
+export default ProjectPage;
