@@ -26,7 +26,7 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects }) => {
         <h1>My projects</h1>
 
         <ul>
-          {projects.map((project: any) => (
+          {projects.map((project: ProjectOverview) => (
             <li key={project.slug}>
               <NextLink href={`projects/${project.slug}`}>{project.title}</NextLink>
               <p>{project.excerpt}</p>
