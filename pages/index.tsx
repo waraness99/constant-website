@@ -23,7 +23,7 @@ const HomePage: NextPage<HomePageProps> = ({ jobs }) => {
       </Head>
 
       <main>
-        <h1>Welcome to my personal website!</h1>
+        <h1 className="text-3xl font-bold underline text-sky-400">Welcome to my personal website!</h1>
         <NextLink href="/projects">My projects</NextLink>
 
         <ul>
