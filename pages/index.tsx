@@ -51,7 +51,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       jobs: data.jobs,
     },
-    revalidate: 60,
+    revalidate: 1,
   };
 };
 
