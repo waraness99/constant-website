@@ -28,7 +28,10 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects }) => {
         <ul>
           {projects.map((project: ProjectOverview) => (
             <li key={project.slug}>
-              <NextLink href={`projects/${project.slug}`}>{project.title}</NextLink>
+              <img src={project.coverImage.url} alt={project.title} width={256} />
+              <p>
+                <NextLink href={`projects/${project.slug}`}>{project.title}</NextLink>
+              </p>
               <p>{project.excerpt}</p>
             </li>
           ))}
@@ -47,6 +50,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       projects: data.projects,
     },
+    revalidate: 60,
   };
 };
 
