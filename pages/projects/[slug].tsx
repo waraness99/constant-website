@@ -15,7 +15,7 @@ interface IParams extends ParsedUrlQuery {
 }
 
 export const ProjectPage: NextPage<ProjectPageProps> = ({ project }) => {
-  const { title, date, content, excerpt } = project;
+  const { title, date, content, excerpt, gallery } = project;
 
   return (
     <>
@@ -28,7 +28,9 @@ export const ProjectPage: NextPage<ProjectPageProps> = ({ project }) => {
       <main>
         <h1>{title}</h1>
         <p>{date}</p>
-        <div dangerouslySetInnerHTML={{ __html: content.html }} />
+        {gallery.length > 0 && gallery.map((image) => <img key={image.id} src={image.url} alt="" width={256} />)}
+
+        <p>{content.markdown}</p>
       </main>
     </>
   );

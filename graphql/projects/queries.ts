@@ -27,10 +27,17 @@ export const GET_PROJECT_BY_SLUG = gql`
     projects(where: { slug: $slug }) {
       title
       date
-      content {
-        html
-      }
       excerpt
+      content {
+        markdown
+      }
+      gallery {
+        id
+        url
+      }
+      youtubeUrl
+      repositoryUrl
+      websiteUrl
       technicalStack
       projectType
     }

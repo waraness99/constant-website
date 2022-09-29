@@ -11,10 +11,14 @@ export interface ProjectOverview {
 export interface ProjectDetails {
   title: string;
   date: string;
+  excerpt: string;
   content: {
-    html: string;
+    markdown: string;
   };
   technicalStack: string[];
-  projectType: string[];
-  excerpt: string;
+  projectType: string;
+  gallery: { id: string; url: string }[];
+  youtubeUrl?: string;
+  repositoryUrl?: string;
+  websiteUrl?: string;
 }
