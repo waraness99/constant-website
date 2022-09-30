@@ -25,17 +25,18 @@ export const GET_PROJECTS_SLUGS = gql`
 export const GET_PROJECT_BY_SLUG = gql`
   query ProjectBySlug($slug: String!) {
     projects(where: { slug: $slug }) {
+      slug
       title
       date
       excerpt
       content {
-        markdown
+        html
       }
       gallery {
         id
         url
       }
-      youtubeUrl
+      youtubeVideoId
       repositoryUrl
       websiteUrl
       technicalStack

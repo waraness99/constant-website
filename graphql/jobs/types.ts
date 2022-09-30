@@ -1,10 +1,10 @@
+import { Image } from "utils/common-types";
+
 export interface Job {
   id: string;
   jobTitle: string;
   companyName: string;
-  companyLogo: {
-    url: string;
-  };
+  companyLogo: Image;
   location: string;
   startDate: string;
   endDate: string;

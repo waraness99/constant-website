@@ -24,11 +24,9 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects }) => (
     </Head>
 
     <Section>
-      <div className="mb-16 md:mb-20 lg:mb-24 space-y-2">
+      <div className="md:mb-20 lg:mb-24 space-y-2">
         <h1 className="text-4xl font-semibold ">Projects</h1>
-        <p className="text-lg text-opacity-80 md:max-w-2xl">
-          I build stuff from time to time that might be interesting 🤷‍
-        </p>
+        <p className="text-lg md:max-w-2xl">I build stuff from time to time that might be interesting 🤷‍</p>
       </div>
 
       <ProjectGrid projects={projects} />

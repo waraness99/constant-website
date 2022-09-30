@@ -9,6 +9,7 @@ module.exports = {
         "white-20": "#ffffff20",
         black: "#05010d",
         red: "#ff6363",
+        "red-20": "#ff636320",
         purple: "#a485ff",
         blue: "#2bafff",
         green: "#59d499",
@@ -31,5 +32,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/line-clamp"), require("tailwind-scrollbar-hide")],
 };

@@ -1,6 +1,8 @@
 import { ProjectOverview } from "graphql/projects/types";
 import Link from "next/link";
 
+import { Badge } from "components/badge";
+
 interface ProjectItemProps {
   project: ProjectOverview;
 }
@@ -11,10 +13,10 @@ export const ProjectGridItem = ({ project }: ProjectItemProps) => {
   return (
     <Link href={`/projects/${slug}`} passHref>
       <a
-        className="group bg-white-10 border border-white-20 hover:border-white rounded-xl overflow-hidden focus-visible:ring-2"
+        className="group bg-white-10 border border-white-20 hover:border-white rounded-xl overflow-hidden focus-visible:ring-2  "
         tabIndex={0}
       >
-        <div className="h-52 lg:h-80 overflow-hidden">
+        <div className="aspect-auto overflow-hidden">
           <img
             className="w-full transform group-hover:scale-110 transition ease-in-out duration-700"
             src={coverImage.url}
@@ -29,9 +31,9 @@ export const ProjectGridItem = ({ project }: ProjectItemProps) => {
 
           <div className="flex flex-wrap gap-2">
             {technicalStack.map((language) => (
-              <p key={language} className="inline-block text-xs bg-white-10 px-2 py-1 rounded-md">
+              <Badge key={language} className="bg-white-10">
                 {language}
-              </p>
+              </Badge>
             ))}
           </div>
         </div>

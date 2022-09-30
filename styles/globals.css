@@ -10,15 +10,18 @@
     @apply text-3xl font-semibold;
   }
   h2 {
-    @apply text-2xl font-semibold;
-  }
-  h3 {
     @apply text-xl font-semibold;
   }
-  h4 {
+  h3 {
     @apply text-lg font-semibold;
   }
   p {
-    @apply text-md text-white text-opacity-60;
+    @apply text-md text-white text-opacity-80;
+  }
+  a {
+    @apply text-red hover:text-white;
+  }
+  code {
+    @apply text-xs text-red bg-red-20 px-2 py-1 rounded-md;
   }
 }

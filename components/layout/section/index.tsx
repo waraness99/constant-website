@@ -1,16 +1,25 @@
-import React from "react";
+import { twMerge } from "tailwind-merge";
 
 interface SectionProps {
   children: React.ReactElement | React.ReactElement[];
-  className?: string;
+  parentClassName?: string;
+  childrenClassName?: string;
 }
 
-const defaultClassName = "py-16 md:py-20 lg:py-24";
+export const Section = ({ children, parentClassName, childrenClassName }: SectionProps) => {
+  const parentClasses = twMerge(`
+   py-16 md:py-20 lg:py-24
+    ${parentClassName}
+  `);
 
-export const Section = ({ children, className = defaultClassName }: SectionProps) => {
+  const childrenClasses = twMerge(`
+  container max-w-screen-xl mx-auto px-6 md:px-8 space-y-12
+    ${childrenClassName}
+  `);
+
   return (
-    <section className={className}>
-      <div className="container px-4 md:px-6 lg:px-24 mx-auto">{children}</div>
+    <section className={parentClasses}>
+      <div className={childrenClasses}>{children}</div>
     </section>
   );
 };
