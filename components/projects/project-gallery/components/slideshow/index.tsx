@@ -23,7 +23,7 @@ export const SlideShow = ({ currentSlide, goToPreviousSlide, goToNextSlide, hasO
       )}
 
       {id === "youtube" ? (
-        <ReactPlayer url={url} width="100%" height="100%" controls light />
+        <ReactPlayer url={url} width="100%" height="100%" controls />
       ) : (
         <img src={url} alt="" className="w-full rounded-lg" />
       )}

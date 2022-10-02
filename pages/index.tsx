@@ -1,6 +1,8 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import NextLink from "next/link";
+
+import { Hero } from "components/home/hero";
+import { ProjectCTA } from "components/home/projects-cta";
 
 import client from "graphql/apolloClient";
 import { GET_JOBS } from "graphql/jobs/queries";
@@ -22,11 +24,11 @@ const HomePage: NextPage<HomePageProps> = ({ jobs }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="text-3xl font-bold underline text-sky-400">Welcome to my personal website!</h1>
-        <NextLink href="/projects">My projects</NextLink>
+      <>
+        <Hero />
+        <ProjectCTA />
 
-        <ul>
+        {/* <ul>
           {jobs.map((job: Job) => (
             <li key={job.id}>
               <img src={job.companyLogo.url} alt={job.companyName} width={64} height={64} />
@@ -36,8 +38,8 @@ const HomePage: NextPage<HomePageProps> = ({ jobs }) => {
               <div dangerouslySetInnerHTML={{ __html: job.description.html }} />
             </li>
           ))}
-        </ul>
-      </main>
+        </ul> */}
+      </>
     </>
   );
 };

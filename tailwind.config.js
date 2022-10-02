@@ -8,6 +8,7 @@ module.exports = {
         "white-10": "#ffffff10",
         "white-20": "#ffffff20",
         black: "#05010d",
+        "black-80": "#00000080",
         red: "#ff6363",
         "red-20": "#ff636320",
         purple: "#a485ff",
@@ -32,5 +33,10 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/line-clamp"), require("tailwind-scrollbar-hide")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
+    require("tailwind-scrollbar-hide"),
+    require("tailwind-gradient-mask-image"),
+  ],
 };
