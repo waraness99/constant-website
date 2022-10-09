@@ -14,3 +14,15 @@ export interface Job {
   };
   skills: string[];
 }
+
+export interface Skill {
+  id: string;
+  language: string;
+  isFavorite?: boolean;
+}
+
+export interface Value {
+  id: string;
+  title: string;
+  description: string;
+}

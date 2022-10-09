@@ -1,18 +1,24 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
-import { Hero } from "components/home/hero";
+import { HeroSection } from "components/home/hero-section";
+import { AboutMeSection } from "components/home/about-me-section";
+import { ValuesSection } from "components/home/values-section";
+const SkillsSection = dynamic(() => import("components/home/skills-section"), { ssr: false });
 import { ProjectCTA } from "components/home/projects-cta";
 
 import client from "graphql/apolloClient";
-import { GET_JOBS } from "graphql/jobs/queries";
-import { Job } from "graphql/jobs/types";
+import { GET_HOME_INFO } from "graphql/home/queries";
+import { Job, Skill, Value } from "graphql/home/types";
+import dynamic from "next/dynamic";
 
 interface HomePageProps {
   jobs: Job[];
+  skills: Skill[];
+  values: Value[];
 }
 
-const HomePage: NextPage<HomePageProps> = ({ jobs }) => {
+const HomePage: NextPage<HomePageProps> = ({ jobs, skills, values }) => {
   return (
     <>
       <Head>
@@ -25,20 +31,13 @@ const HomePage: NextPage<HomePageProps> = ({ jobs }) => {
       </Head>
 
       <>
-        <Hero />
+        <HeroSection />
+        <AboutMeSection />
+        {/* job history horizontal scroll */}
+        <SkillsSection skills={skills} />
+        <ValuesSection values={values} />
+        {/* fun facts about me */}
         <ProjectCTA />
-
-        {/* <ul>
-          {jobs.map((job: Job) => (
-            <li key={job.id}>
-              <img src={job.companyLogo.url} alt={job.companyName} width={64} height={64} />
-              <b>
-                {job.jobTitle} - {job.companyName}
-              </b>
-              <div dangerouslySetInnerHTML={{ __html: job.description.html }} />
-            </li>
-          ))}
-        </ul> */}
       </>
     </>
   );
@@ -46,12 +45,14 @@ const HomePage: NextPage<HomePageProps> = ({ jobs }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
-    query: GET_JOBS,
+    query: GET_HOME_INFO,
   });
 
   return {
     props: {
       jobs: data.jobs,
+      skills: data.skills,
+      values: data.values,
     },
     revalidate: 1,
   };
