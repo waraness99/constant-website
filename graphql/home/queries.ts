@@ -13,9 +13,7 @@ export const GET_HOME_INFO = gql`
       startDate
       endDate
       isCurrentJob
-      description {
-        html
-      }
+      description
       skills
     }
     skills(first: 15) {
@@ -27,6 +25,14 @@ export const GET_HOME_INFO = gql`
       id
       title
       description
+    }
+    funFacts {
+      id
+      title
+      description
+      icon {
+        url
+      }
     }
   }
 `;

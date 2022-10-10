@@ -1,6 +1,7 @@
 import { Section } from "components/layout/section";
 import { Skill } from "graphql/home/types";
 
+import SkillBadge from "./SkillBadge";
 import { chunkArray, shuffleArray } from "./utils";
 
 interface SkillsSectionProps {
@@ -25,13 +26,8 @@ const SkillsSection = ({ skills }: SkillsSectionProps) => {
       <div className="space-y-2">
         {skillsChunks.map((skillsChunk, index) => (
           <div key={index} className="flex flex-wrap justify-center">
-            {skillsChunk.map(({ id, language, isFavorite }) => (
-              <div key={id} className="w-auto p-2">
-                <div className="flex items-center px-6 py-3 bg-white-20 rounded-full space-x-2">
-                  {isFavorite && <div className="w-4 h-4 rounded-full bg-gradient-to-r from-[#f13dd4] to-[#7000ff]" />}
-                  <p>{language}</p>
-                </div>
-              </div>
+            {skillsChunk.map((skill) => (
+              <SkillBadge key={skill.id} skill={skill} />
             ))}
           </div>
         ))}

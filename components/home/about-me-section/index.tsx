@@ -4,7 +4,7 @@ import styles from "styles/gradient.module.css";
 
 export const AboutMeSection = () => (
   <Section>
-    <div className="grid gap-16 grid-cols-1 md:grid-cols-2 items-center">
+    <div className="grid gap-16 grid-cols-1 md:grid-cols-2">
       <div className="space-y-8">
         <h2 className="text-xl md:text-3xl leading-tight">A bit about me</h2>
         <p>

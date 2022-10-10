@@ -9,9 +9,7 @@ export interface Job {
   startDate: string;
   endDate: string;
   isCurrentJob: boolean;
-  description: {
-    html: string;
-  };
+  description: string;
   skills: string[];
 }
 
@@ -25,4 +23,13 @@ export interface Value {
   id: string;
   title: string;
   description: string;
+}
+
+export interface FunFact {
+  id: string;
+  title: string;
+  description: string;
+  icon: {
+    url: string;
+  };
 }

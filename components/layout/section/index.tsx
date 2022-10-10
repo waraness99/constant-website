@@ -8,7 +8,7 @@ interface SectionProps {
 
 export const Section = ({ children, parentClassName, childrenClassName }: SectionProps) => {
   const parentClasses = twMerge(`
-   py-10 md:py-12 lg:py-16
+   py-12 md:py-16 lg:py-20
     ${parentClassName}
   `);
 
