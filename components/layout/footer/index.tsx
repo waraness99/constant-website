@@ -17,6 +17,13 @@ export const Footer = () => (
             </li>
           ))}
 
+          <li>
+            {/* @ts-ignore */}
+            <button className="text-white hover:text-red" onClick={() => $crisp.push(["do", "chat:open"])}>
+              Contact me
+            </button>
+          </li>
+
           {FooterExternalLinks.map(({ title, href }) => (
             <li key={title}>
               <a href={href} target="_blank" rel="noreferrer" className="text-white hover:text-red">
