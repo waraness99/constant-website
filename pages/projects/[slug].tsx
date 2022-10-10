@@ -32,7 +32,7 @@ export const ProjectPage: NextPage<ProjectPageProps> = ({ project }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Section>
+      <Section parentClassName="mt-12">
         <div className="space-y-2">
           <Breadcrumbs items={breadcrumbs} />
           <h1 className="text-2xl md:text-4xl">{title}</h1>

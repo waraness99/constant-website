@@ -18,7 +18,7 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => (
           </Link>
 
           {index !== items.length - 1 && (
-            <div aria-hidden="true" className="select-none text-white text-opacity-40">
+            <div aria-hidden="true" className="select-none text-white-40">
               /
             </div>
           )}
