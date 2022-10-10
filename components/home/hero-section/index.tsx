@@ -32,7 +32,7 @@ export const HeroSection = () => (
             <Button>Check my projects</Button>
           </Link>
 
-          <button onClick={openCrispBox} className="text-md text-white-40">
+          <button onClick={openCrispBox} className="text-md text-white opacity-40">
             Contact me
           </button>
         </div>

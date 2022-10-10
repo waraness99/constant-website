@@ -16,7 +16,7 @@ type ProjectMetadataItemProps = WithValue | WithChildren;
 
 export const ProjectMetadataItem = ({ label, value, children }: ProjectMetadataItemProps) => (
   <div className="space-y-1">
-    <p className="text-xs text-white-40">{label}</p>
+    <p className="text-xs text-white opacity-40">{label}</p>
     <p className="text-sm">{value}</p>
     {children}
   </div>
