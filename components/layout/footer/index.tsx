@@ -1,4 +1,3 @@
-import { Logo } from "components/logo";
 import Link from "next/link";
 import { getCurrentYear } from "utils/date";
 import { footerExternalLinks, footerInternalLinks, openCrispBox } from "utils/links";
