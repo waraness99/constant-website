@@ -1,5 +1,7 @@
 import type { AppProps } from "next/app";
 import Script from "next/script";
+
+import { Layout } from "components/layout/index";
 import "styles/globals.css";
 
 import { ApolloProvider } from "@apollo/client";
@@ -25,7 +27,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         gtag('js', new Date());
         gtag('config', '${process.env.GOOGLE_ANALYTICS_ID}');`}
       </Script>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ApolloProvider>
   );
 }

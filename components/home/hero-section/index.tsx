@@ -1,8 +1,8 @@
-import React from "react";
+import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import { Section } from "components/layout/section";
 import { Button } from "components/button";
-import Link from "next/link";
+import { openCrispBox } from "utils/links";
 
 export const HeroSection = () => (
   <div className="bg-[url('/hero-bg-gradient.jpg')] bg-cover bg-no-repeat bg-bottom">
@@ -31,8 +31,8 @@ export const HeroSection = () => (
           <Link href="/projects" passHref>
             <Button>Check my projects</Button>
           </Link>
-          {/* @ts-ignore */}
-          <button onClick={() => $crisp.push(["do", "chat:open"])} className="text-sm text-white text-opacity-40">
+
+          <button onClick={openCrispBox} className="text-sm text-white text-opacity-40">
             Contact me
           </button>
         </div>

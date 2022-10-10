@@ -12,10 +12,7 @@ export const Section = ({ children, parentClassName, childrenClassName }: Sectio
     ${parentClassName}
   `);
 
-  const childrenClasses = twMerge(`
-  container max-w-screen-xl mx-auto px-4 md:px-8 space-y-12
-    ${childrenClassName}
-  `);
+  const childrenClasses = twMerge(`container max-w-screen-xl mx-auto px-4 md:px-8 space-y-12 ${childrenClassName}`);
 
   return (
     <section className={parentClasses}>

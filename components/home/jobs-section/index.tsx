@@ -1,5 +1,5 @@
 import { Section } from "components/layout/section";
-import { LinkedInProfile } from "utils/links";
+import { linkedInProfileUrl } from "utils/links";
 import { JobCard } from "./job-card";
 
 import { Job } from "graphql/home/types";
@@ -22,7 +22,12 @@ export const JobsSection = ({ jobs }: JobsSectionProps) => (
         </p>
 
         <div>
-          <a href={LinkedInProfile} target="_blank" rel="noreferrer" className="font-semibold">
+          <a
+            href={linkedInProfileUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="text-white hover:text-red font-semibold"
+          >
             Learn more on my LinkedIn
           </a>
         </div>

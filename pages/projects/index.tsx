@@ -18,17 +18,16 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects }) => (
       <title>Projects | Constant Druon</title>
       <meta
         name="description"
-        content="Hi, I'm Constant Druon and I'm a Software Engineer Student! Look at my cool projects!"
+        content="Hi, I'm Constant Druon and I'm a Software Engineer! Look at my cool projects!"
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <Section>
-      <div className="md:mb-20 lg:mb-24 space-y-2">
-        <h1 className="text-2xl md:text-4xl">Projects</h1>
+    <Section parentClassName="mt-12">
+      <div className="space-y-2">
+        <h1 className="text-2xl md:text-4xl">My projects</h1>
         <p className="text-lg md:max-w-2xl">I build stuff from time to time that might be interesting 🤷‍</p>
       </div>
-
       <ProjectGrid projects={projects} />
     </Section>
   </>
