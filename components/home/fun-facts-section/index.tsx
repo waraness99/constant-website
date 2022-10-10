@@ -1,6 +1,7 @@
 import { Section } from "components/layout/section";
-import { FunFact } from "graphql/home/types";
 import { FunFactCard } from "./fun-fact-card";
+
+import { FunFact } from "graphql/home/types";
 
 interface FunFactsSectionProps {
   funFacts: FunFact[];

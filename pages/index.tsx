@@ -13,6 +13,7 @@ import { FunFactsSection } from "components/home/fun-facts-section";
 import client from "graphql/apolloClient";
 import { GET_HOME_INFO } from "graphql/home/queries";
 import { FunFact, Job, Skill, Value } from "graphql/home/types";
+import { Footer } from "components/layout/footer";
 
 interface HomePageProps {
   jobs: Job[];
@@ -40,6 +41,7 @@ const HomePage: NextPage<HomePageProps> = ({ jobs, skills, values, funFacts }) =
       <ValuesSection values={values} />
       <FunFactsSection funFacts={funFacts} />
       <ProjectCTASection />
+      <Footer />
     </>
   </>
 );
