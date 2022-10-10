@@ -13,7 +13,7 @@ export const Section = ({ children, parentClassName, childrenClassName }: Sectio
   `);
 
   const childrenClasses = twMerge(`
-  container max-w-screen-xl mx-auto px-6 md:px-8 space-y-12
+  container max-w-screen-xl mx-auto px-4 md:px-8 space-y-12
     ${childrenClassName}
   `);
 

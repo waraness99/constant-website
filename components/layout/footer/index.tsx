@@ -4,7 +4,7 @@ import { FooterExternalLinks, FooterInternalLinks } from "utils/links";
 
 export const Footer = () => (
   <section className="py-8">
-    <div className="container max-w-screen-xl mx-auto px-6 md:px-8">
+    <div className="container max-w-screen-xl mx-auto px-4 md:px-8">
       <nav>
         <ul className="flex flex-wrap gap-6 md:gap-10 lg:gap-12">
           {FooterInternalLinks.map(({ title, href }) => (

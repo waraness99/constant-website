@@ -25,7 +25,7 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects }) => (
 
     <Section>
       <div className="md:mb-20 lg:mb-24 space-y-2">
-        <h1 className="text-4xl font-semibold ">Projects</h1>
+        <h1 className="text-2xl md:text-4xl">Projects</h1>
         <p className="text-lg md:max-w-2xl">I build stuff from time to time that might be interesting 🤷‍</p>
       </div>
 

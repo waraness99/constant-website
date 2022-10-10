@@ -31,7 +31,10 @@ export const HeroSection = () => (
           <Link href="/projects" passHref>
             <Button>Check my projects</Button>
           </Link>
-          <button className="text-sm text-white text-opacity-40">Contact me</button>
+          {/* @ts-ignore */}
+          <button onClick={() => $crisp.push(["do", "chat:open"])} className="text-sm text-white text-opacity-40">
+            Contact me
+          </button>
         </div>
       </div>
     </Section>
