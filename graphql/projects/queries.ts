@@ -16,7 +16,7 @@ export const GET_PROJECTS = gql`
 
 export const GET_PROJECTS_SLUGS = gql`
   query Projects {
-    projects {
+    projects(first: 100) {
       slug
     }
   }
