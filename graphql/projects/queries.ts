@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const GET_PROJECTS = gql`
   query Projects {
-    projects(orderBy: rating_DESC) {
+    projects(first: 100, orderBy: rating_DESC) {
       slug
       title
       excerpt
