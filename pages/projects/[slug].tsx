@@ -36,7 +36,7 @@ export const ProjectPage: NextPage<ProjectPageProps> = ({ project }) => {
         <div className="space-y-2">
           <Breadcrumbs items={breadcrumbs} />
           <h1 className="text-2xl md:text-4xl">{title}</h1>
-          <p className="text-lg font-normal">{excerpt}</p>
+          <p className="text-md md:text-lg font-normal">{excerpt}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
