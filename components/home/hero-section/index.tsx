@@ -20,6 +20,8 @@ export const HeroSection = () => (
           />
           <em className="text-3xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-[#f83a3a] via-[#f13dd4] to-[#7000ff]">
             Software Engineer
+            <br />
+            (student)
           </em>
         </h1>
 

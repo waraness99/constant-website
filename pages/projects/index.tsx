@@ -18,7 +18,7 @@ const ProjectsPage: NextPage<ProjectsPageProps> = ({ projects }) => (
       <title>Projects | Constant Druon</title>
       <meta
         name="description"
-        content="Hi, I'm Constant Druon and I'm a Software Engineer! Look at my cool projects!"
+        content="Hi, I'm Constant Druon and I'm a Software Engineer Student! Look at my cool projects!"
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
