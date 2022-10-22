@@ -22,4 +22,5 @@ export interface ProjectDetails {
   youtubeVideoId?: string;
   repositoryUrl?: string;
   websiteUrl?: string;
+  coverImage: Image;
 }
