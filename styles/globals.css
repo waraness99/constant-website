@@ -24,4 +24,13 @@
   code {
     @apply text-xs text-red bg-red-20 px-2 py-1 rounded-md;
   }
+  ol {
+    @apply list-decimal list-inside;
+  }
+  ul {
+    @apply list-disc list-inside;
+  }
+  li {
+    @apply text-md text-white text-opacity-80 leading-10 ;
+  }
 }
