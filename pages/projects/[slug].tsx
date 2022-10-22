@@ -20,7 +20,7 @@ interface IParams extends ParsedUrlQuery {
 }
 
 export const ProjectPage: NextPage<ProjectPageProps> = ({ project }) => {
-  const { slug, title, content, excerpt, gallery, youtubeVideoId, coverImage } = project;
+  const { slug, title, content, excerpt, gallery, youtubeVideoId } = project;
 
   const breadcrumbs = [...defaultBreadcrumbs, { label: title, href: `/projects/${slug}` }];
 
@@ -29,7 +29,7 @@ export const ProjectPage: NextPage<ProjectPageProps> = ({ project }) => {
       <Head>
         <title>{`${title} | Constant Druon`}</title>
         <meta name="description" content={excerpt} />
-        <meta property="og:image" content={coverImage.url} />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Section parentClassName="mt-12">
