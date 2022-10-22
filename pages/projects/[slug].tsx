@@ -29,7 +29,7 @@ export const ProjectPage: NextPage<ProjectPageProps> = ({ project }) => {
       <Head>
         <title>{`${title} | Constant Druon`}</title>
         <meta name="description" content={excerpt} />
-        <meta property="og:image" content={coverImage?.url} />
+        <meta property="og:image" content={coverImage.url} />
       </Head>
 
       <Section parentClassName="mt-12">
