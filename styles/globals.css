@@ -34,6 +34,6 @@
     @apply text-md text-white text-opacity-80 leading-10;
   }
   li > div, li > p {
-    @apply inline-block;
+    @apply inline;
   }
 }
