@@ -28,6 +28,7 @@ export const ProjectPage: NextPage<ProjectPageProps> = ({ project }) => {
     <>
       <Head>
         <title>{`${title} | Constant Druon`}</title>
+        <meta name="title" content={`${title} | Constant Druon`} />
         <meta name="description" content={excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
