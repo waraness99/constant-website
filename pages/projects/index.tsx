@@ -38,9 +38,17 @@ export const getStaticProps: GetStaticProps = async () => {
     query: GET_PROJECTS,
   });
 
+  const projects = [...data.projects].sort((a: ProjectOverview, b: ProjectOverview) => {
+    if (a.rating > b.rating) return -1;
+    if (a.rating < b.rating) return 1;
+    if (a.date > b.date) return -1;
+    if (a.date < b.date) return 1;
+    return 0;
+  });
+
   return {
     props: {
-      projects: data.projects,
+      projects,
     },
     revalidate: 1,
   };

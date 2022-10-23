@@ -2,8 +2,10 @@ import { gql } from "@apollo/client";
 
 export const GET_PROJECTS = gql`
   query Projects {
-    projects(first: 100, orderBy: rating_DESC) {
+    projects(first: 100) {
       slug
+      date
+      rating
       title
       excerpt
       technicalStack

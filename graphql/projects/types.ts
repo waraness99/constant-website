@@ -2,6 +2,8 @@ import { Image } from "utils/common-types";
 
 export interface ProjectOverview {
   slug: string;
+  date: string;
+  rating: number;
   title: string;
   excerpt: string;
   technicalStack: string[];
