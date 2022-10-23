@@ -31,6 +31,9 @@
     @apply list-disc list-inside;
   }
   li {
-    @apply text-md text-white text-opacity-80 leading-10 ;
+    @apply text-md text-white text-opacity-80 leading-10;
+  }
+  li > div, li > p {
+    @apply inline-block;
   }
 }
