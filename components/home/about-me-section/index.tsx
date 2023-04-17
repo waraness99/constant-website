@@ -8,12 +8,8 @@ export const AboutMeSection = () => (
       <div className="space-y-8">
         <h2 className="text-xl md:text-3xl leading-tight">About me</h2>
         <p>
-          Hi, my name is Constant. I am a {getAgeByBirthDate("03 Nov 1999")} years old Software Engineer student from
-          France. I am passionate about building a better world through technology.
-        </p>
-        <p>
-          Since the age of 18, I have launched two startups and I am always looking for new ways to use technology to
-          make a positive impact on the world.
+          Hi, I’m Constant, a French Software Engineer. I’ve founded two startups since age 18, driven by my passion for
+          leveraging technology to make a positive impact. I’m always seeking innovative approaches to problem-solving.
         </p>
       </div>
 
